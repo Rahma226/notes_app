@@ -24,7 +24,7 @@ class NotesList extends StatelessWidget {
               return  Padding(
                 padding:const EdgeInsets.symmetric(vertical: 4),
                 child: CustomNoteItem(
-                  noteModel: notes[index],
+                  note: notes[index],
                 ),
               );
             },

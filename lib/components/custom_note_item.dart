@@ -5,9 +5,9 @@ import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
-  const CustomNoteItem({super.key, required this.noteModel});
+  const CustomNoteItem({super.key, required this.note});
 
-  final NoteModel noteModel;
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CustomNoteItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
         decoration: BoxDecoration(
-          color: Color(noteModel.color),
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -33,7 +33,7 @@ class CustomNoteItem extends StatelessWidget {
           children: [
             ListTile(
               title:  Text(
-                noteModel.title,
+                note.title,
                 style:const TextStyle(
                   color: Colors.black,
                   fontSize: 26,
@@ -42,7 +42,7 @@ class CustomNoteItem extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 16, bottom: 16),
                 child: Text(
-                  noteModel.subTitle,
+                  note.subTitle,
                   style: TextStyle(
                     color: Colors.black.withOpacity(.5),
                     fontSize: 16,
@@ -50,7 +50,9 @@ class CustomNoteItem extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
                 icon: const Icon(
                   FontAwesomeIcons.trash,
                   color: Colors.black,
@@ -61,7 +63,7 @@ class CustomNoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 24),
               child: Text(
-                noteModel.date,
+                note.date,
                 style: TextStyle(
                   color: Colors.black.withOpacity(.5),
                 ),
