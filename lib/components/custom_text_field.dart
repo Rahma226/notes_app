@@ -21,7 +21,7 @@ class CustomTextField extends StatelessWidget {
           return 'Field is required';
         }
       },
-      cursorColor: kcolor4,
+      cursorColor: Kcolor2,
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hint,
