@@ -21,7 +21,7 @@ class CustomTextField extends StatelessWidget {
           return 'Field is required';
         }
       },
-      cursorColor: Kcolor2,
+      cursorColor: Kcolor1,
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hint,
@@ -29,7 +29,7 @@ class CustomTextField extends StatelessWidget {
             fontWeight: FontWeight.normal, fontFamily: 'Poppins', fontSize: 12),
         border: buildBorder(),
         enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(Kcolor2),
+        focusedBorder: buildBorder(Kcolor1),
       ),
     );
   }

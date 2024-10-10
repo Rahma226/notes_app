@@ -70,7 +70,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         title: title!,
                         subTitle: subTitle!,
                         date: formatedCurrentDate,
-                        color: Kcolor2.value);
+                        color: Kcolor1.value);
                     BlocProvider.of<AddNoteCubit>(context).addNote(note_model);
 
                      ScaffoldMessenger.of(context).showSnackBar(
