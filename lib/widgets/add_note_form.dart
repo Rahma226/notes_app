@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:notes_app/components/color_item.dart';
 import 'package:notes_app/components/custom_botton.dart';
 import 'package:notes_app/components/custom_text_field.dart';
 import 'package:notes_app/constant.dart';
@@ -24,6 +23,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   String? title, subTitle;
+  NoteModel? note;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,15 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         date: formatedCurrentDate,
                         color: Kcolor2.value);
                     BlocProvider.of<AddNoteCubit>(context).addNote(note_model);
-                  } else {
+
+                     ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Note added successfully!'),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                  }
+                  else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});
                   }
