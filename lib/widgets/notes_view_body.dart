@@ -29,7 +29,7 @@ super.initState();
             height: 42,
           ),
           CustomAppBar(
-            title: 'Notes',
+            title: 'QuickNote',
             icon: Icons.search,
           ),
          Expanded(child: NotesList()),
